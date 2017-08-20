@@ -19,7 +19,7 @@ module Lita
 
         robot.trigger(:save_alexa_message, username: 'Alexa News Recorder', message: message)
 
-        response.write JSON.dump(alexa_response)
+        response.write JSON.dump(alexa_response(message))
       end
 
       def check_for_publisher!
