@@ -19,7 +19,7 @@ module Lita
 
         robot.trigger(:save_alexa_message, username: 'Alexa News Recorder', message: message)
 
-        response.write JSON.dump(sample_response)
+        response.write JSON.dump(alexa_response)
       end
 
       def check_for_publisher!
@@ -36,33 +36,22 @@ module Lita
         value
       end
 
-      def sample_response
+      def alexa_response(message)
         {
           "version": "1.0",
           "sessionAttributes": {
-            "supportedHoriscopePeriods": {
-              "daily": true,
-              "weekly": false,
-              "monthly": false
-            }
           },
           "response": {
             "outputSpeech": {
               "type": "PlainText",
-              "text": "Today will provide you a new learning opportunity.  Stick with it and the possibilities will be endless. Can I help you with anything else?"
+              "text": "Added your message to Lita's flash briefing: #{message}"
             },
             "card": {
               "type": "Simple",
-              "title": "Horoscope",
-              "content": "Today will provide you a new learning opportunity.  Stick with it and the possibilities will be endless."
+              "title": "Recorded flash message",
+              "content": "Added your message to Lita's flash briefing: #{message}"
             },
-            "reprompt": {
-              "outputSpeech": {
-                "type": "PlainText",
-                "text": "Can I help you with anything else?"
-              }
-            },
-            "shouldEndSession": false
+            "shouldEndSession": true
           }
         }
       end
