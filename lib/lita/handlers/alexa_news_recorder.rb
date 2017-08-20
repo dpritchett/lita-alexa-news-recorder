@@ -9,7 +9,7 @@ module Lita
         Lita.logger.debug "Inbound request params: "
         Lita.logger.debug request.params
         Lita.logger.debug "Inbound request body: "
-        Lita.logger.debug request.body
+        Lita.logger.debug request.body.string # it's a StringIO
 
         response.write request.body
       end
