@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-alexa-news-recorder"
-  spec.version       = "0.1.2"
+  spec.version       = "0.1.3"
   spec.authors       = ["Daniel J. Pritchett"]
   spec.email         = ["dpritchett@gmail.com"]
   spec.description   = "Records voice memos via Alexa and transcribes them for publishing to an Alexa Flash Briefing"
@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "lita", ">= 4.7"
+  spec.add_runtime_dependency "lita-alexa-news-publisher", ">= 0.1.1"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "pry-byebug"
