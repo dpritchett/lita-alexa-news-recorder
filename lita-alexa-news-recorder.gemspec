@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-alexa-news-recorder"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.2"
   spec.authors       = ["Daniel J. Pritchett"]
   spec.email         = ["dpritchett@gmail.com"]
   spec.description   = "Records voice memos via Alexa and transcribes them for publishing to an Alexa Flash Briefing"
