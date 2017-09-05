@@ -8,6 +8,8 @@ module Lita
 
       # Rack::Request, Rack::Response
       def record_message(request, response)
+        Lita.logger.debug(request)
+
         message = extract_message(request.body.string)
 
         robot.trigger(:save_alexa_message, username: 'Alexa News Recorder', message: message)
