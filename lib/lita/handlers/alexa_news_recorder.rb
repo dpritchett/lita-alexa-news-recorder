@@ -9,6 +9,7 @@ module Lita
       # Rack::Request, Rack::Response
       def record_message(request, response)
         Lita.logger.debug(request)
+        Lita.logger.debug(request.body.string)
 
         message = extract_message(request.body.string)
 
